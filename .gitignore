@@ -1,1 +1,3 @@
 *.o
+gtest
+test-simple
