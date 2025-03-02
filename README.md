@@ -21,7 +21,7 @@ andrey@T430:~$ cd hexagon-test && git clone https://github.com/google/googletest
 ```
 andrey@T430:~/hexagon-test$ make test-simple
 ```
-2 Build all test, i.e., simple test, and gtest tests  
+2. Build all test, i.e., simple test, and gtest tests  
 ```
 andrey@T430:~/hexagon-test$ make
 ```
@@ -49,15 +49,15 @@ powermac6.was.epa.gov 1
 antelope.rtpndpd.epa.gov 1
 156.42.76.162 1
 ```
-1a. test access hosts with timing
+2. test access hosts with timing
 ```
 andrey@T430:~/hexagon-test$ time ./test-simple host
 ```
-2. test access resources
+3. test access resources
 ```
 andrey@T430:~/hexagon-test$ ./test-simple resource
 ```
-2b. test access resources with timing
+4. test access resources with timing
 ```
 andrey@T430:~/hexagon-test$ time ./test-simple resource
 running resource access test
@@ -77,7 +77,7 @@ real    0m0.215s
 user    0m0.039s
 sys     0m0.027s
 ```
-3. run all google tests, which includes 4 cases, host and resource parsing only, and host and resource parsing and displaying
+5. run all google tests, which includes 4 cases, host and resource parsing only, and host and resource parsing and displaying
 ```
 andrey@T430:~/hexagon-test$ ./gtest
 .
