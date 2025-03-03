@@ -1,14 +1,21 @@
 # Hexagon test #
 
 ### Setting it up ###
-1. Download the source
+1. Install build tools
+```
+andrey@T430:~$ sudo apt install build-essential -y
+```
+2. Download the source
  
-  `andrey@T430:~$ git clone https://github.com/andrewdupa/hexagon-test.git`
+```
+andrey@T430:~$ git clone https://github.com/andrewdupa/hexagon-test.git
+```
   
-2. Download and build google test framework (optional)
+3. Download and build cmake and google test framework (optional)
 
 ```
-andrey@T430:~$ cd hexagon-test && git clone https://github.com/google/googletest.git -b v1.16.0 \
+andrey@T430:~$ sudo apt install cmake -y \
+&& cd hexagon-test && git clone https://github.com/google/googletest.git -b v1.16.0 \
 && cd googletest \
 && mkdir build \
 && cd build \
