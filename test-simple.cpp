@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
     const std::string file_name = "testdata/epa-http.txt";
     const std::string error_log = "test requires using either host, or resource argument";
 
-    std::unique_ptr<Parser> pp;
     std::unique_ptr<Log> lp;
 
     if (argc != 2)
@@ -22,13 +21,11 @@ int main(int argc, char *argv[])
     if (std::string{"host"} == argv[1]) {
         std::cout << "running host access test" << "\n";
         lp = std::make_unique<HostLog>();
-        pp = std::make_unique<HostParser>();
     }
     else if (std::string{"resource"} == argv[1])
     {
         std::cout << "running resource access test" << "\n";
         lp = std::make_unique<ResourceLog>();
-        pp = std::make_unique<ResourceParser>();
     }
     else
         std::cout << error_log << "\n";
@@ -42,8 +39,6 @@ int main(int argc, char *argv[])
 
     std::string line;
     while(std::getline(file, line))
-    {
-        lp->AddLog(pp->ParseLine(line));
-    }
+        lp->AddLog(line);
     std::cout << *lp << "\n";
 }

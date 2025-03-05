@@ -4,7 +4,7 @@
 
 * Creation Date : 02-03-2025
 
-* Last Modified : Sun 02 Mar 2025 01:13:54 PM
+* Last Modified : Tue 04 Mar 2025 12:01:02 PM
 
 * Created By :  Andrey Andreev
 
@@ -19,8 +19,10 @@ namespace hexagon {
 
     void Log::AddLog(const std::string& log)
     {
-        if (!log.empty())
-            requests[log] += 1;
+        auto out = parser->ParseLine(log);
+        if (!out.empty()) {
+            requests[out] += 1;
+        }
     }
 
     std::ostream& operator<<(std::ostream& os, const Log& logger)
@@ -47,7 +49,6 @@ namespace hexagon {
     {
         Log::AddLog(log);
     }
-
 
     void ResourceLog::Write(std::ostream& os) const
     {
